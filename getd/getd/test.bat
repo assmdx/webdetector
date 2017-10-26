@@ -1,0 +1,3 @@
+scrapy crawl spiderdata
+echo Press any button...
+pause
