@@ -18,13 +18,13 @@ class Dataprocess(object):
         def writematrixtofile(self):
                 with open('spec.txt', 'r') as f:  
                 spec = f.readlines()  #将特征度入到list中
-                x = np.zeros((1,108))
+                x = np.zeros((1,108))   #最后去掉第一列0
 
                 # y = np.zeros(())
                 str = '我的妹妹没有胸没有胸没有美腿'
                 for mm in self.fenci(str):
-                        for sj in spec
-                                if()                                        
+                        for j in range(len(spec))
+                                if(sj == spec[j])                                        
                 pass
         def fenci(self,str):                                
                 sel = jieba.cut(str, cut_all=True)
