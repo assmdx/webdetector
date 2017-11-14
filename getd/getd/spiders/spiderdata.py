@@ -4,13 +4,11 @@ import html2text
 import logging
 from bs4 import BeautifulSoup
 from getd.items import Content
-from selenium import webdriver
+# from selenium import webdriver
 class SpiderdataSpider(scrapy.Spider):
     name = 'spiderdata'    
-    start_urls = [                            
-                'https://www.google.com/search?q=%E4%B8%9C%E4%BA%AC%E7%83%AD&lr=lang_zh-CN',
-                'https://www.baidu.com/s?wd=%E6%AC%A7%E7%BE%8E%E6%83%85%E8%89%B2&ie=UTF-8',
-                'http://www.cww2.net/'                                        
+    start_urls = [                                            
+                'https://www.hongxiu.com/',
     ]
     def parse(self, response):
         item = Content()
@@ -19,10 +17,11 @@ class SpiderdataSpider(scrapy.Spider):
         str2 = ''.join(response.xpath('//a/text()').extract())
         str3 = ''.join(response.xpath('//p/text()').extract())        
         item['text'] = str1 + str2 + str3                      
-        yield item        
+        yield item
 
         for url in response.xpath('//a/@href').extract():
-            yield scrapy.Request(url, callback=self.parse)
+            if('http' in url):            
+                yield scrapy.Request(url, callback=self.parse)
 
 
     #@    museivaticani.va

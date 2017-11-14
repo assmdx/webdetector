@@ -10,22 +10,22 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'getd'
-# LOG_FILE="log.txt"
+LOG_FILE="log.txt"
 SPIDER_MODULES = ['getd.spiders']
 NEWSPIDER_MODULE = 'getd.spiders'
 # DOWNLOAD_DELAY =3
 ITEM_PIPELINES = {
-    'getd.pipelines.SaveItem': 900,    
+    'getd.pipelines.SaveItem': 400,    
 }
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'getd (+http://www.yourdomain.com)'
 SPIDER_MIDDLEWARES = {
     'scrapy_deltafetch.DeltaFetch': 100,
 }
-DELTAFETCH_ENABLED = True
+DELTAFETCH_ENABLED = False
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 # DEPTH_LIMIT=4
 REACTOR_THREADPOOL_MAXSIZE = 50
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
