@@ -33,3 +33,58 @@
 # 		print('00000000000000000000000000')			
 # f.close()
 # pass
+# 
+# 
+# import ijson
+# import codecs
+# fp = open('E:\\webApp\\DATA\\webdetector\\data.json',encoding="utf-8")
+# f3 = open('E:\\webApp\\DATA\\webdetector\\urlist.txt','ab+')
+# objects = ijson.items(fp,"item")
+# for obj in objects:	
+# 	f3.write(bytes(obj['url']+"\r\n",encoding="utf-8"))
+# fp.close()
+# f3.close()
+
+
+# import ijson
+# import codecs
+# # fp = open('E:\\webApp\\DATA\\webdetector\\d.json',encoding="utf-8")
+# f1 = codecs.open('E:\\webApp\\DATA\\webdetector\\data.json','rb')
+# f2 = open('E:\\webApp\\DATA\\webdetector\\data2.json','ab+')
+# f3 = open('E:\\webApp\\DATA\\webdetector\\urlist.txt','ab+')
+# data = f1.readlines() #将负样本中的所有的行取出来
+# for i in range(len(data)):
+# 	str = data[i].decode(encoding="utf-8").strip("\r\n")
+# 	f2.write(bytes(str+",\r\n",encoding="utf-8"))	
+# f2.close()
+# f1.close()
+# 
+#
+#coding=utf-8
+# from sys import argv
+
+# script, input, output = argv
+input = 'E:\\webApp\\DATA\\webdetector\\x.txt'
+input2 = 'E:\\webApp\\DATA\\webdetector\\y.txt'
+output = 'E:\\webApp\\DATA\\webdetector\\libsvm_x_y.txt'
+txt = open(input,'r')
+txty = open(input2,'r')
+svm_data = open(output,'w')
+
+linex = txt.readlines()
+liney = txty.readlines()
+
+for j in range(len(linex)):
+    features = linex[j].split(' ')       
+    num = len(features)
+
+    svm_format = liney[j].strip('\t\n')
+    for i in range(num):
+        svm_format = "%s %d:%s" % (svm_format,i+1,features[i])
+        # print(i)
+    svm_format = svm_format + '\n'
+    svm_data.write(svm_format)
+    # print svm_format
+txt.close()
+txty.close()
+svm_data.close()
