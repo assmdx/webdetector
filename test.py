@@ -109,4 +109,3 @@
 # browser.close()
 # urlist.close()
 # pass
-
