@@ -1,5 +1,5 @@
 # webdetector
-webdetector是采用基于SVM机器学习来实现的web端检测和探测不良网站的工具.+
+webdetector是采用基于SVM机器学习来实现的web端检测和探测不良网站的工具.
 
 webdetector完全开源.
 
