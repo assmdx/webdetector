@@ -69,22 +69,20 @@ class Dataprocess(object):
                 str = re.sub("[\s+\.\!\/_,$%^*(+\"\']+※-‘‘’’”“”| [+——！，。？?、~@#￥%……&*（）【】1234567890abcdefghijklmnopqrstuvwxyz()\\：《》]+","",str)
                 return str
         def datatolibsvmdata(self,inputx,inputy,output):
-                txt = open(input,'r')
-                txty = open(input2,'r')
+                txt = open(inputx,'r')
+                txty = open(inputy,'r')
                 svm_data = open(output,'w')
 
                 linex = txt.readlines()
                 liney = txty.readlines()
-
                 for j in range(len(linex)):
                         features = linex[j].split(' ')       
-                        num = len(features)
-
+                        num = len(features)                        
                         svm_format = liney[j].strip('\t\n')
                         for i in range(num):
                                 svm_format = "%s %d:%s" % (svm_format,i+1,features[i])
                                 # print(i)
-                        svm_format = svm_format + '\n'
+                        # svm_format = svm_format + '\n'
                         svm_data.write(svm_format)
                         # print svm_format
                 txt.close()
@@ -93,6 +91,9 @@ class Dataprocess(object):
                 pass
 def test():
         foo  = Dataprocess('E:\\webApp\\DATA\\webdetector\\data.json')
-        Dataprocess.getdatafromjsonfile(foo)
+        inputx = 'E:\\webApp\\DATA\\webdetector\\x2.txt'
+        inputy = 'E:\\webApp\\DATA\\webdetector\\y2.txt'
+        output = 'E:\\webApp\\DATA\\webdetector\\libsvm_x_y2.txt'
+        Dataprocess.datatolibsvmdata(foo,inputx,inputy,output)
 if __name__== "__main__":
         test()

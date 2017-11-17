@@ -1,3 +1,4 @@
-scrapy crawl spiderdata
-echo Press any button...
-pause
+rem scrapy crawl spiderdata
+rem echo Press any button...
+rem pause
+
