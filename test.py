@@ -109,3 +109,25 @@
 # browser.close()
 # urlist.close()
 # pass
+from flask import Flask, render_template,request
+import sys
+import os
+sys.path.append(os.path.abspath("./model"))
+from model import *
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_word():
+	return '0.0'
+
+@app.route('/predict/')
+def predict():
+	return test()
+	
+if __name__ == '__main__':
+	port = int(os.environ.get('PORT', 5000))
+	app.run(debug=True)
+	app.run(host='0.0.0.0',port=port)
+
+	
