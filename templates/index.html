@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div style="margin-left:175px; margin-top:460px; float:left; position:absolute;">	
+		<a>url:</a>		
+		<input type="text" id = "url">
+		<input type="button" onclick="getresult()" value ="start">		
+	</div>
+</body>
+ 	<script type="text/javascript">
+ 		function getresult(){
+ 			var urltext = document.getElementById('url').value;
+ 			var xhr = new XMLHttpRequest();
+			xhr.open('PUT', '/predict/');
+			xhr.setRequestHeader('Content-Type', 'application/json');
+			xhr.onload = function() {
+			    if (xhr.status === 200) {
+			       	// var userInfo = JSON.parse(xhr.responseText);
+			    	var result = xhr.responseText;
+			    	alert(result);
+			    }
+			};
+			xhr.send(JSON.stringify({
+			    url: 'John Smith'
+			}));
+ 		} 
+	</script>
+</html>
