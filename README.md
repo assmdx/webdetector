@@ -1,5 +1,5 @@
 # webdetector
-webdetector is a tool that recognizes whether the website is dangerous.
+webdetector is a web app that recognizes whether the website is dangerous.
 
 Developed using libsvm.
 
