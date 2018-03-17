@@ -1,17 +1,25 @@
 # webdetector
-webdetector是采用基于SVM机器学习来实现的web端检测和探测不良网站的工具.
+webdetector is a tool that recognizes whether the website is dangerous.
+Developed using libsvm.
+Wrapped into a Webapp using Flask Micro Framework.
 
-webdetector完全开源.
+#Install webdetector
+To run it locally, first clone the directory.
+	git clone https://github.com/assmdx/webdetector.git
+Next cd into the directory.
+	cd webdetector
+Then install the dependencies using pip.
+	sudo pip install -r requirements.txt
+install livsvm.
+To start the Flask Server,
+python app.py
 
-webdetector免费功能包含检测功能，高级版含有完整检测和探测不良网站功能
+#Doc of webdetector
+https://assmdx.gitbooks.io/webdetector/content/
 
-webdetector文档地址https://assmdx.gitbooks.io/webdetector/content/
--------------------------------------------------------------------------
-还存在的问题：
+#Some problems
 
-如何在自己的项目中引用开源协议
-多引用了包
-encode和decode那块
-
+if you want to use webdetector on the dynamic website,you need to install 
+webdriver and spider the url use spiderurldata method in the Dataprocess.py
 
 

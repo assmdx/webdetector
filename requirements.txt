@@ -1,0 +1,6 @@
+flask
+jieba
+re
+numpy
+BeautifulSoup
+urllib

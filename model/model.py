@@ -3,7 +3,11 @@ from libsvm.python.svm import *
 import os
 
 def predict(data):
+	#predict the result of the url
 	model = svm_load_model(os.path.abspath("./model/model"))
 	out=[1]
 	p_label, p_acc, p_val =  svm_predict(out, data.tolist(), model)
-	return p_label
+	if p_label[0] > 0.0:
+		return True
+	else:
+		return False

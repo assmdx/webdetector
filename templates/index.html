@@ -12,6 +12,7 @@
 	</div>
 </body>
  	<script type="text/javascript">
+ 		// 获取输入的网址,发起请求
  		function getresult(){
  			var urltext = document.getElementById('url').value;
  			var xhr = new XMLHttpRequest();
@@ -25,7 +26,7 @@
 			    }
 			};
 			xhr.send(JSON.stringify({
-			    url: 'John Smith'
+			    url:urltext
 			}));
  		} 
 	</script>

@@ -2,7 +2,7 @@ from flask import Flask, render_template,request
 import sys
 import os
 sys.path.append(os.path.abspath("./model"))
-from model import *
+# from model import *
 import Dataprocess
 import model
 
@@ -15,13 +15,15 @@ def hello_word():
 @app.route('/predict/',methods=['GET','POST','PUT'])
 def predict():
 	urlData = request.get_json()
-	urlspec = Dataprocess(urlData["url"])	 
-	response =model.predict(urlspec)
-	return response
+	print("urlData : " + str(urlData))
+	urlspec = Dataprocess.Dataprocess(urlData['url'])	 
+	response = model.predict(urlspec)
+	print("responese : " + str(response))
+	return str(response)
 	
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 5000))
-	app.run(debug=True)
+	# app.run(debug=True)
 	app.run(host='0.0.0.0',port=port)
 
 	
