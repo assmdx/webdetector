@@ -15,6 +15,8 @@ Next cd into the directory.
 	cd webdetector
 
 Then install the dependencies using pip.
+
+	sudo pip install --upgrade setuptools
 	
 	sudo pip install -r requirements.txt
 
