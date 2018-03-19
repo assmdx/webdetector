@@ -1,6 +1,4 @@
 flask
 jieba
-re
 numpy
-BeautifulSoup
-urllib
+BeautifulSoup4

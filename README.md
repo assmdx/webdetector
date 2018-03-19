@@ -18,7 +18,7 @@ Then install the dependencies using pip.
 	
 	sudo pip install -r requirements.txt
 
-install livsvm.
+install libsvm.
 
 To start the Flask Server,
 	
