@@ -8,6 +8,6 @@ def predict(data):
 	out=[1]
 	p_label, p_acc, p_val =  svm_predict(out, data.tolist(), model)
 	if p_label[0] > 0.0:
-		return True
+		return "a dangerous website"
 	else:
-		return False
+		return "a good website"
